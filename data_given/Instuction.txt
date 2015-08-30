@@ -1,0 +1,25 @@
+/*
+ * Sample Data
+*/
+
+Recent-Popular-search-(default).json
+Data sample for the first screen(00:05, 00:15) in the video.
+
+auto_complete-kuala.json
+Data sample for auto-complete, when user type "kuala". (00:08) in video.
+
+auto_complete-sin.json
+Data sample for auto-complete, when user type "sin". (00:21) in video.
+
+/*
+ * Icons
+*/
+Get it from font-awesome.
+* Country flag, can be just a place-holder. that's not what we are trying to test.
+
+
+/*
+ * Logo
+*/
+brand-g.png
+

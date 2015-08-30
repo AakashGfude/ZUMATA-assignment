@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zumata</title>
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/font-awesome.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+    </head>
+    <body style="overflow:hidden !important">
+        <div class="content">
+            <div class="header">
+                <img src="data_given/brand-g.png" style="width:190px">
+                <span class="header-login" style="margin-left: 88px">US$</span>
+                <img src="usflag.png" style="margin-left: 17px;margin-top: -4px;">
+                <span class="header-login" style="margin-left:19px">Login</span>
+            </div>
+            <div class="body">
+                <p id="heading">Great Rates on Over 300,000 Hotels</p>
+                <div id="searchBar">
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Where you want to go?">
+                </div>
+                <button type="button" id="searchButton">Search</button>
+            </div>
+        </div>
+        <div id="searchModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content" ng-app="user" ng-controller="MainController">
+                    <div class="modal-header">
+                        <i class="fa fa-arrow-left" data-dismiss="modal"></i>
+                        <button type="button" id="clearSearch" class="close" aria-hidden="true" style="display:none">&times;</button>
+                        <input type="text" id="modal-searchBar" placeholder="Enter destination or hotel..." ng-model="searchText" show-search-results>
+                    </div>
+                    <div class="modal-body">
+                        <div class="initialContent">
+                            <p class="searchTitle" id="recentSearch">Recent Search</p>
+                            <div ng-repeat = "recentSearch in recent" ng-class="{'m-b0':$last}" class="m-b20 repeat-animation">
+                                <i class="fa fa-clock-o"></i><div ng-cloak>{{recentSearch.name}}</div>
+                            </div>
+                            <hr class="hr-modal" />
+                            <p class="searchTitle" id="popularSearch">Popular Search</p>
+                            <div ng-repeat = "popularSearch in popular" ng-class="{'m-b10':$last}" class="m-b20 repeat-animation">
+                                <i class="fa fa-star"></i><div ng-cloak>{{popularSearch.name}}</div>
+                            </div>
+                        </div>
+                        <div class="searchContent" style="display:none">
+                            <div ng-repeat = "searchResult in searchResult.data.city" ng-class="{'m-t_15':$first}" class="highlight" ng-mouseover="highlight($event)" ng-mouseleave="removeHighlight($event)">
+                                <i class="fa fa-map-marker"></i><div ng-cloak class="search-result" ng-bind-html="searchResult.term | highlight:searchText"></div>
+                            </div>
+                            <div ng-repeat = "searchResult in searchResult.data.hotel" class="highlight" ng-mouseover="highlight($event)" ng-mouseleave="removeHighlight($event)">
+                                <i class="fa fa-building-o"></i><div ng-cloak class="search-result" ng-bind-html="searchResult.term| highlight:searchText"></div>
+                                <div ng-cloak class="subtext">{{searchResult.data.city}}, {{searchResult.data.country}}</div>
+                            </div>
+                            <div ng-repeat = "searchResult in searchResult.data.poi" class="highlight" ng-mouseover="highlight($event)" ng-mouseleave="removeHighlight($event)">
+                                <i class="fa fa-university"></i><span ng-cloak class="search-result" ng-bind-html="searchResult.term | highlight:searchText"></span>
+                                <div ng-cloak class="subtext">{{searchResult.data.city}}, {{searchResult.data.country}}</div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-animate.min.js"></script>
+    <script src="scripts/angular-sanitize.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/app.js"></script>
+</html>

@@ -1,0 +1,186 @@
+body, html{
+	background-color: black !important;
+	overflow: hidden;
+	height: 100%;
+}
+.content{
+	background-color: #0A2937;
+	width: 450px;
+	height: 100%;
+	margin: auto;
+}
+.header{
+	position: fixed;
+	background-color: #2F7ABF;
+	width: inherit;
+	padding-top: 5px;
+    padding-bottom: 5px;
+}
+.body{
+	padding-top: 100px;
+	height: 100%;
+}
+#heading{
+	margin: 0 0 10px;
+    color: #B8C3C7;
+    font-family: sans-serif;
+    font-size: 29px;
+    margin-left: 31px
+}
+#searchBar{
+	margin-left: 9px;
+    margin-top: 20px;
+    width: 433px;
+    border: 5px solid black;
+    height: 64px;
+    border-radius: 5px;
+    background-color: white;
+}
+#searchButton{
+	color: #A9DBF7;
+	margin-left: 9px;
+    width: 433px;
+    border: 5px solid black;
+    height: 64px;
+    border-radius: 5px;
+    background-color: #55ACF1;
+}
+#searchImage{
+	width: 20px;
+    color: blue;
+    position: absolute;
+    margin-top: 42px;
+    margin-left: 46px;
+}
+.close {
+	color: #5AAAEB !important;
+	opacity: 1 !important;
+}
+.modal-content{
+	width: 450px;
+    margin-left: 76px;
+    border-radius: 0px;
+}
+.modal-body {
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+}
+.modal-dialog{
+	margin-top: 0px !important;
+}
+.modal-backdrop{
+	background-color: black;
+}
+input#searchInput::-webkit-input-placeholder{
+	color: #9D9D9D;
+	font-weight: 700;
+	}
+::-webkit-input-placeholder{
+	color: #ADADAD;
+	margin-left: 20px;
+}
+#modal-searchBar{
+	width: 373px;
+    border: 0px;
+    margin-left: 14px;
+    height: 30px;
+}
+#modal-searchBar:focus{
+	outline: none;
+}
+.fa-arrow-left{
+	color: #59A9EB !important;
+	cursor: pointer;
+}
+.fa-clock-o, .fa-star, .fa-university, .fa-building-o, .fa-map-marker{
+	float: left;
+	margin-right: 20px;
+	color: #CFCFCF;
+}
+.fa-search{
+	color: #55ACF1;
+    margin: 18px;
+    font-weight: 900;
+}
+.m-b20{
+	margin-bottom: 20px;
+}
+.m-b0{
+	margin-bottom: -10px !important;
+}
+.m-t_15{
+	margin-top: -15px;
+}
+.hr-modal{
+	width: 517px;
+    margin-left: -15px;
+}
+.searchTitle{
+	color: #EABF8D;
+    font-family: helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+}
+.m-b10{
+	margin-bottom: 10px;
+}
+.subtext{
+	color: #CFCFCF;
+    font-size: 11px;
+    margin-left: 32px;
+    font-weight: 600;
+}
+#searchInput{
+	border :none;
+	width: 200px;
+}
+#searchInput:focus{
+	outline: none;
+}
+.highlight{
+	margin-bottom: 0px; 
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 15px;
+}
+.highlight-text{
+	background-color: #8DB7D9;
+	color: white !important;
+}
+.highlight-subtext{
+	color: white !important;
+}
+.bold{
+	font-weight: 700;
+}
+.header-login{
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 18px;
+}
+#popularSearch, #recentSearch{
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition:1s linear all;
+  transition:1s linear all;
+}
+.initialContent .m-b0.ng-scope ~ #popularSearch{
+	visibility: visible;
+	opacity: 1;
+}
+.in #recentSearch{
+	visibility: visible;
+	opacity: 1;
+}
+.repeat-animation.ng-enter {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.repeat-animation.ng-enter-stagger {
+  -webkit-transition-delay:100ms;
+  transition-delay:100ms;
+  -webkit-transition-duration:0;
+  transition-duration:0;
+}
+.repeat-animation.ng-enter { opacity:0; }
+.repeat-animation.ng-enter.ng-enter-active { opacity:1; }
