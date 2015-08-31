@@ -23,7 +23,6 @@ user.controller('MainController',['$scope','$timeout','jsonLoad',function($scope
 		$timeout(function(){
 			jsonLoad('data_given/Recent-Popular-search-(default).json').then(function(response){
 		$scope.recent=response.data.recent;
-		console.log($scope.recent);
 		$scope.popular = response.data.popular;
 	});
 		},500);
@@ -39,7 +38,6 @@ user.controller('MainController',['$scope','$timeout','jsonLoad',function($scope
 }]);
 user.factory('jsonLoad',['$http',function($http){
 	return function(url){
-		console.log(url);
 		return $http.get(url);
 		};
 }]);
@@ -73,7 +71,6 @@ user.directive('showSearchResults',['jsonLoad',function(jsonLoad){
 }]);
 user.filter('highlight',function(){
 	return function(first,second){
-		console.log('Inside');
 		if(first.toLowerCase().indexOf(second) >=0 ){
 			var startIndex = first.toLowerCase().indexOf(second);
 			var second = first.substring(startIndex,startIndex+second.length);

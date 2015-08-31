@@ -34,12 +34,12 @@
                     <div class="modal-body">
                         <div class="initialContent">
                             <p class="searchTitle" id="recentSearch">Recent Search</p>
-                            <div ng-repeat = "recentSearch in recent" ng-class="{'m-b0':$last}" class="m-b20 repeat-animation">
+                            <div ng-repeat = "recentSearch in recent track by recentSearch.id" ng-class="{'m-b0':$last}" class="m-b20 repeat-animation">
                                 <i class="fa fa-clock-o"></i><div ng-cloak>{{recentSearch.name}}</div>
                             </div>
                             <hr class="hr-modal" />
                             <p class="searchTitle" id="popularSearch">Popular Search</p>
-                            <div ng-repeat = "popularSearch in popular" ng-class="{'m-b10':$last}" class="m-b20 repeat-animation">
+                            <div ng-repeat = "popularSearch in popular track by popularSearch.id" ng-class="{'m-b10':$last}" class="m-b20 repeat-animation">
                                 <i class="fa fa-star"></i><div ng-cloak>{{popularSearch.name}}</div>
                             </div>
                         </div>
